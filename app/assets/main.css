@@ -7,7 +7,9 @@
   --ui-secondary: hsl(191, 50%, 10%);
   --ui-text: var(--ui-secondary);
   --ui-info: hsl(251, 80%, 20%);
+  --ui-text-dimmed: var(--ui-info);
   --color-accent: hsl(131, 80%, 20%);
+  --ui-bg-accented: var(--color-accent);
   --view-transition-old-zindex: 9999;
   --view-transition-new-zindex: 1;
 }
@@ -18,13 +20,11 @@
   --ui-secondary: hsl(191, 50%, 90%);
   --ui-text: var(--ui-secondary);
   --ui-info: hsl(251, 80%, 80%);
+  --ui-text-dimmed: var(--ui-info);
   --color-accent: hsl(131, 80%, 80%);
+  --ui-bg-accented: var(--color-accent);
   --view-transition-old-zindex: 1;
   --view-transition-new-zindex: 9999;
-}
-
-.text-primary {
-  @apply text-secondary;
 }
 
 html {

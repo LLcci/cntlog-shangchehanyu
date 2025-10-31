@@ -22,4 +22,12 @@ export default defineNuxtConfig({
   ui: {
     fonts: false,
   },
+  icon: {
+    customCollections: [
+      {
+        prefix: "custom",
+        dir: "./app/assets/icons",
+      },
+    ],
+  },
 });
