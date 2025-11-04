@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "animate.css";
 
 :root {
   --ui-primary: hsl(191, 50%, 90%);
@@ -25,6 +26,10 @@
   --ui-bg-accented: var(--color-accent);
   --view-transition-old-zindex: 1;
   --view-transition-new-zindex: 9999;
+}
+
+@theme {
+  --color-accent: hsl(131, 80%, 20%);
 }
 
 html {

@@ -1,11 +1,11 @@
 <template>
   <div class="w-full flex justify-center items-center">
     <div
-      class="w-150 border border-secondary flex justify-center items-center rounded-full shadow-xl/30 shadow-secondary mt-8"
+      class="w-150 border border-accent flex justify-center items-center rounded-full shadow-xl/30 shadow-accent mt-8"
     >
       <UNavigationMenu :items="items" color="secondary" />
       <USwitch
-        v-model="isDark"
+        :model-value="isDark"
         unchecked-icon="i-lucide-sun-medium"
         checked-icon="i-lucide-moon"
         color="secondary"
@@ -16,7 +16,7 @@
 </template>
 <script setup lang="ts">
 const colorMode = useColorMode();
-const isDark = ref(colorMode.value === "dark");
+const isDark = computed(() => colorMode.preference === "dark");
 
 const nextTheme = computed(() =>
   colorMode.value === "dark" ? "light" : "dark"

@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     head: {
       title: "上车函予的个人网站",
       meta: [{ name: "description", content: "上车函予的个人网站" }],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
   ui: {
