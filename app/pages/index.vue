@@ -1,21 +1,21 @@
 <template>
-  <div class="size-fit mt-16 m-auto">
+  <div class="size-fit lg:mt-16 mt-8 m-auto">
     <Magnet :padding="30" :magnet-strength="25">
-      <div class="flex">
-        <div class="w-3xs">
-          <div class="relative h-94 animate__animated animate__fadeInLeft">
+      <div class="lg:flex">
+        <div class="w-80 lg:w-3xs">
+          <div class="h-60 lg:h-94 animate__animated animate__fadeInLeft">
             <div
-              class="absolute w-full top-0 left-0 h-94 bg-[url('~/assets/images/profile_bg.jpg')] rounded-4xl bg-cover bg-center"
+              class="absolute w-full top-0 left-0 h-60 lg:h-94 bg-[url('~/assets/images/profile_bg.jpg')] rounded-4xl bg-cover bg-center"
             >
               <div
                 class="w-full h-full bg-white/30 dark:bg-black/30 backdrop-blur-lg rounded-4xl"
               />
             </div>
             <div
-              class="absolute w-full top-0 left-0 h-94 border border-accent rounded-4xl p-4 shadow-2xl shadow-accent flex flex-col items-center justify-center"
+              class="absolute w-full top-0 left-0 h-60 lg:h-94 border border-accent rounded-4xl p-4 shadow-2xl shadow-accent flex flex-col items-center justify-center"
             >
               <img
-                class="w-24 h-24 rounded-full"
+                class="lg:w-24 lg:h-24 w-16 h-16 rounded-full"
                 src="~/assets/images/avatar.svg"
               />
               <div class="text-lg font-bold mt-2">上车函予</div>
@@ -24,74 +24,38 @@
                 <div class="text-sm">: 374166002@qq.com</div>
               </div>
               <div class="mt-2">
-                <template v-if="!isDark">
-                  <UBadge
-                    icon="i-lucide-blocks"
-                    size="md"
-                    color="primary"
-                    variant="subtle"
-                    >架构</UBadge
-                  >
-                  <UBadge
-                    class="ml-2"
-                    icon="i-lucide-rocket"
-                    size="md"
-                    color="primary"
-                    variant="subtle"
-                    >全栈</UBadge
-                  >
-                  <br />
-                  <UBadge
-                    class="mt-2"
-                    icon="i-lucide-disc-3"
-                    size="md"
-                    color="primary"
-                    variant="subtle"
-                    >动画</UBadge
-                  >
-                  <UBadge
-                    class="mt-2 ml-2"
-                    icon="i-lucide-boxes"
-                    size="md"
-                    color="primary"
-                    variant="subtle"
-                    >3D</UBadge
-                  >
-                </template>
-                <template v-else>
-                  <UBadge
-                    icon="i-lucide-blocks"
-                    size="md"
-                    color="secondary"
-                    variant="solid"
-                    >架构</UBadge
-                  >
-                  <UBadge
-                    class="ml-2"
-                    icon="i-lucide-rocket"
-                    size="md"
-                    color="secondary"
-                    variant="solid"
-                    >全栈</UBadge
-                  >
-                  <br />
-                  <UBadge
-                    class="mt-2"
-                    icon="i-lucide-disc-3"
-                    size="md"
-                    color="secondary"
-                    variant="solid"
-                    >动画</UBadge
-                  >
-                  <UBadge
-                    class="mt-2 ml-2"
-                    icon="i-lucide-boxes"
-                    size="md"
-                    color="secondary"
-                    variant="solid"
-                    >3D</UBadge
-                  >
-                </template>
+                <UBadge
+                  icon="i-lucide-blocks"
+                  size="md"
+                  color="secondary"
+                  variant="solid"
+                  >架构</UBadge
+                >
+                <UBadge
+                  class="ml-2"
+                  icon="i-lucide-rocket"
+                  size="md"
+                  color="secondary"
+                  variant="solid"
+                  >全栈</UBadge
+                >
+                <br />
+                <UBadge
+                  class="mt-2"
+                  icon="i-lucide-disc-3"
+                  size="md"
+                  color="secondary"
+                  variant="solid"
+                  >动画</UBadge
+                >
+                <UBadge
+                  class="mt-2 ml-2"
+                  icon="i-lucide-boxes"
+                  size="md"
+                  color="secondary"
+                  variant="solid"
+                  >3D</UBadge
+                >
               </div>
             </div>
           </div>
@@ -111,7 +75,7 @@
             />
           </div>
         </div>
-        <div class="w-2xl ml-8">
+        <div class="w-80 lg:w-2xl lg:ml-8 mt-4 lg:mt-0">
           <div
             class="border border-accent rounded-4xl shadow-2xl shadow-accent p-4 animate__animated animate__fadeInDown"
           >
@@ -146,7 +110,7 @@
             variant="soft"
           />
           <div
-            class="mt-4 flex justify-end animate__animated animate__fadeInUp"
+            class="hidden lg:flex mt-4 justify-end animate__animated animate__fadeInUp"
           >
             <UButton
               trailing-icon="i-lucide-move-right"
@@ -174,7 +138,7 @@ const textColors = computed(() =>
 );
 
 const thoughtList = ref([
-  "这里是我的个人网站，祝你在这里玩的开心~下面是我的一些想法",
+  "这里是我的个人网站",
   "讲骚话，有助于提升感情，哈哈😂😂",
   "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍",
 ]);
