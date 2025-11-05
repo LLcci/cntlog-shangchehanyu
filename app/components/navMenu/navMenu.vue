@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full flex justify-center items-center">
+  <div class="lg:flex hidden w-full justify-center items-center">
     <div
       class="w-150 border border-accent flex justify-center items-center rounded-full shadow-xl/30 shadow-accent mt-8"
     >
-      <UNavigationMenu :items="items" color="secondary" />
+      <UNavigationMenu :items="lgItems" color="secondary" />
       <USwitch
         :model-value="isDark"
         unchecked-icon="i-lucide-sun-medium"
@@ -12,6 +12,43 @@
         @click="handleThemeToggle"
       />
     </div>
+  </div>
+  <div class="lg:hidden block">
+    <UHeader mode="slideover">
+      <template #title>
+        <img
+          class="ml-8 w-10 h-10 rounded-full"
+          src="~/assets/images/avatar.svg"
+          alt=""
+        />
+      </template>
+      <template #right>
+        <UButton
+          v-if="isDark"
+          icon="i-lucide-sun-medium"
+          size="md"
+          color="secondary"
+          variant="link"
+          @click="handleThemeToggle"
+        />
+        <UButton
+          v-else
+          icon="i-lucide-moon"
+          size="md"
+          color="secondary"
+          variant="link"
+          @click="handleThemeToggle"
+        />
+        <UNavigationMenu :items="items" color="secondary" />
+      </template>
+      <template #body>
+        <UNavigationMenu
+          :items="lgItems"
+          color="secondary"
+          orientation="vertical"
+        />
+      </template>
+    </UHeader>
   </div>
 </template>
 <script setup lang="ts">
@@ -69,7 +106,7 @@ const startViewTransition = (event: MouseEvent) => {
   });
 };
 
-const items = ref([
+const lgItems = ref([
   {
     label: "首页",
     icon: "i-lucide-home",
@@ -98,6 +135,19 @@ const items = ref([
   },
   {
     label: "Gitee",
+    icon: "i-custom-gitee",
+    to: "https://gitee.com/shangchehanyu_admin",
+    target: "_blank",
+  },
+]);
+
+const items = ref([
+  {
+    icon: "i-lucide-github",
+    to: "https://github.com/LLcci",
+    target: "_blank",
+  },
+  {
     icon: "i-custom-gitee",
     to: "https://gitee.com/shangchehanyu_admin",
     target: "_blank",
