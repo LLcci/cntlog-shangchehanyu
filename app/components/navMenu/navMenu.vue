@@ -13,43 +13,41 @@
       />
     </div>
   </div>
-  <div class="lg:hidden block">
-    <UHeader mode="slideover">
-      <template #title>
-        <img
-          class="ml-8 w-10 h-10 rounded-full"
-          src="~/assets/images/avatar.svg"
-          alt=""
-        />
-      </template>
-      <template #right>
-        <UButton
-          v-if="isDark"
-          icon="i-lucide-sun-medium"
-          size="md"
-          color="secondary"
-          variant="link"
-          @click="handleThemeToggle"
-        />
-        <UButton
-          v-else
-          icon="i-lucide-moon"
-          size="md"
-          color="secondary"
-          variant="link"
-          @click="handleThemeToggle"
-        />
-        <UNavigationMenu :items="items" color="secondary" />
-      </template>
-      <template #body>
-        <UNavigationMenu
-          :items="lgItems"
-          color="secondary"
-          orientation="vertical"
-        />
-      </template>
-    </UHeader>
-  </div>
+  <UHeader class="lg:hidden" mode="slideover">
+    <template #title>
+      <img
+        class="ml-8 w-10 h-10 rounded-full"
+        src="~/assets/images/avatar.svg"
+        alt=""
+      />
+    </template>
+    <template #right>
+      <UButton
+        v-if="isDark"
+        icon="i-lucide-sun-medium"
+        size="md"
+        color="secondary"
+        variant="link"
+        @click="handleThemeToggle"
+      />
+      <UButton
+        v-else
+        icon="i-lucide-moon"
+        size="md"
+        color="secondary"
+        variant="link"
+        @click="handleThemeToggle"
+      />
+      <UNavigationMenu :items="items" color="secondary" />
+    </template>
+    <template #body>
+      <UNavigationMenu
+        :items="lgItems"
+        color="secondary"
+        orientation="vertical"
+      />
+    </template>
+  </UHeader>
 </template>
 <script setup lang="ts">
 const colorMode = useColorMode();
