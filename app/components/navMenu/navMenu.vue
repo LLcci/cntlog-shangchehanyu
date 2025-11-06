@@ -51,7 +51,7 @@
 </template>
 <script setup lang="ts">
 const colorMode = useColorMode();
-const isDark = computed(() => colorMode.preference === "dark");
+const isDark = computed(() => colorMode.value === "dark");
 
 const nextTheme = computed(() =>
   colorMode.value === "dark" ? "light" : "dark"
