@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@source "../../../content/**/*";
+
 @import "animate.css";
 
 :root {
@@ -46,4 +48,8 @@ html {
 }
 ::view-transition-new(root) {
   z-index: var(--view-transition-new-zindex);
+}
+
+.text-primary {
+  color: var(--color-accent);
 }

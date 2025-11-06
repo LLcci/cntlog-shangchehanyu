@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -14,13 +14,11 @@
     "@nuxt/eslint": "1.10.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "^4.1.0",
-    "@tailwindcss/vite": "^4.1.16",
     "animate.css": "^4.1.1",
     "eslint": "^9.38.0",
     "gsap": "^3.13.0",
     "motion-v": "^1.5.0",
     "nuxt": "^4.2.0",
-    "tailwindcss": "^4.1.16",
     "three": "0.178.0",
     "typescript": "^5.9.3",
     "vue": "^3.5.22",
@@ -28,6 +26,12 @@
   },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.72",
-    "@types/three": "^0.180.0"
+    "@types/three": "^0.180.0",
+    "sharp": "^0.34.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "ipx": "^3.0.0"
+    }
   }
 }

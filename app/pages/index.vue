@@ -75,7 +75,7 @@
             />
           </div>
         </div>
-        <div class="w-80 lg:w-2xl lg:ml-8 mt-4 lg:mt-0">
+        <div class="w-80 lg:w-3xl lg:ml-8 mt-4 lg:mt-0">
           <div
             class="border border-accent rounded-4xl shadow-2xl shadow-accent p-4 animate__animated animate__fadeInDown"
           >
@@ -88,24 +88,14 @@
             />
           </div>
           <UBlogPost
+            v-for="post in data"
+            :key="post.path"
             class="border border-accent rounded-4xl shadow-2xl mt-4 shadow-accent animate__animated animate__fadeInRight"
-            title="Introducing Nuxt Icon v1"
-            description="Discover Nuxt Icon v1 - a modern, versatile"
-            image="https://nuxt.com/assets/blog/nuxt-icon/cover.png"
-            date="2024-11-25"
-            to="https://nuxt.com/blog/nuxt-icon-v1-0"
-            target="_blank"
-            orientation="horizontal"
-            variant="soft"
-          />
-          <UBlogPost
-            class="border border-accent rounded-4xl shadow-2xl mt-4 shadow-accent animate__animated animate__fadeInRight"
-            title="Introducing Nuxt Icon v1"
-            description="Discover Nuxt Icon v1 - a modern, versatile"
-            image="https://nuxt.com/assets/blog/nuxt-icon/cover.png"
-            date="2024-11-25"
-            to="https://nuxt.com/blog/nuxt-icon-v1-0"
-            target="_blank"
+            :title="post.title"
+            :description="post.description"
+            :image="post.image"
+            :date="post.date"
+            :to="post.path"
             orientation="horizontal"
             variant="soft"
           />
@@ -142,4 +132,12 @@ const thoughtList = ref([
   "讲骚话，有助于提升感情，哈哈😂😂",
   "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍",
 ]);
+
+const { data } = await useAsyncData("blogs", () => {
+  return queryCollection("blogs")
+    .select("title", "description", "image", "date", "path")
+    .order("date", "DESC")
+    .limit(2)
+    .all();
+});
 </script>
