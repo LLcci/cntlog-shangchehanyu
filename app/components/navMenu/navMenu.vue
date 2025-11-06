@@ -19,7 +19,7 @@
         class="ml-8 w-10 h-10 rounded-full"
         src="~/assets/images/avatar.svg"
         alt=""
-      />
+      >
     </template>
     <template #right>
       <UButton

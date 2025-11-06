@@ -1,4 +1,7 @@
 {
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  // 保存的时候自动格式化
+  "editor.formatOnSave": true,
   "files.associations": {
     "*.css": "tailwindcss"
   },
@@ -8,5 +11,13 @@
   "tailwindCSS.classAttributes": ["class", "ui"],
   "tailwindCSS.experimental.classRegex": [
     ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ]
+  ],
+  "eslint.format.enable": true,
+  "notebook.defaultFormatter": "dbaeumer.vscode-eslint",
+  //开启自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  }
 }
