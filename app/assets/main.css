@@ -2,8 +2,6 @@
 @import "@nuxt/ui";
 @source "../../../content/**/*";
 
-@import "animate.css";
-
 :root {
   --ui-primary: hsl(191, 50%, 90%);
   --ui-bg: var(--ui-primary);

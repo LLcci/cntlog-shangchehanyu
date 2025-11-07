@@ -2,10 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  content: {
-    experimental: { nativeSqlite: true },
-  },
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxt/content"],
+  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui", "@nuxt/content",'@vueuse/nuxt'],
   css: ["~/assets/main.css"],
   app: {
     head: {
@@ -13,6 +10,7 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "上车函予的个人网站" }],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
+    pageTransition: { name: 'page', mode: 'out-in' },
   },
   ui: {
     fonts: false,

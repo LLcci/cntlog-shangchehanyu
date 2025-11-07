@@ -1,7 +1,7 @@
 <template>
-  <div class="lg:flex hidden w-full justify-center items-center">
+  <div class="lg:flex hidden w-full justify-center items-center sticky top-0 z-50">
     <div
-      class="w-150 border border-accent flex justify-center items-center rounded-full shadow-xl/30 shadow-accent mt-8"
+      class="w-150 border border-accent flex justify-center items-center rounded-full shadow-xl/30 shadow-accent mt-8 bg-gray-50 dark:bg-gray-800 opacity-80"
     >
       <UNavigationMenu :items="lgItems" color="secondary" />
       <USwitch
@@ -43,6 +43,10 @@
     <template #body>
       <UNavigationMenu
         :items="lgItems"
+        :ui="{
+          link:['text-3xl','py-4','gap-3'],
+          linkLeadingIcon:['size-6']
+        }"
         color="secondary"
         orientation="vertical"
       />

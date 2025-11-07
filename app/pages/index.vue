@@ -1,9 +1,15 @@
 <template>
   <div class="size-fit lg:mt-16 mt-8 m-auto">
-    <Magnet :padding="30" :magnet-strength="25">
+    <Magnet :padding="30" :magnet-strength="25" :disabled="smallerThanLg">
       <div class="lg:flex">
         <div class="w-80 lg:w-3xs">
-          <div class="h-60 lg:h-94 animate__animated animate__fadeInLeft">
+          <motion.div 
+            class="h-60 lg:h-94 lg:sticky lg:top-37"
+            :initial="{ x: '-100%', opacity: 0 }"
+            :while-in-view="{ x: 0, opacity: 1 }"
+            :transition="{ duration: 0.8,type: 'easeIn' }"
+            :in-view-options="{ once: true }"
+          >
             <div
               class="absolute w-full top-0 left-0 h-60 lg:h-94 bg-[url('~/assets/images/profile_bg.jpg')] rounded-4xl bg-cover bg-center"
             >
@@ -58,9 +64,13 @@
                 >
               </div>
             </div>
-          </div>
-          <div
-            class="flex items-center justify-center border border-accent rounded-4xl p-4 shadow-2xl shadow-accent mt-4 font-bold text-sm animate__animated animate__fadeInUp"
+          </motion.div>
+          <motion.div
+            class="flex items-center justify-center lg:sticky lg:top-137 border border-accent rounded-4xl p-4 shadow-2xl shadow-accent mt-4 font-bold text-sm"
+            :initial="{ y: '100%', opacity: 0 }"
+            :while-in-view="{ y: 0, opacity: 1 }"
+            :transition="{ duration: 0.8,type: 'easeIn' }"
+            :in-view-options="{ once: true }"
           >
             <span>实事求是</span>
             <RotatingText
@@ -73,11 +83,15 @@
               :transition="{ type: 'spring', damping: 30, stiffness: 400 }"
               :texts="['以人为本', '分享创新', '总结经验教训']"
             />
-          </div>
+          </motion.div>
         </div>
-        <div class="w-80 lg:w-3xl lg:ml-8 mt-4 lg:mt-0">
-          <div
-            class="border border-accent rounded-4xl shadow-2xl shadow-accent p-4 animate__animated animate__fadeInDown"
+        <div class="w-80 lg:w-3xl lg:ml-8 mt-4 lg:mt-0 pb-4">
+          <motion.div
+            class="border border-accent rounded-4xl shadow-2xl shadow-accent p-4"
+            :initial="{ y: '-100%', opacity: 0 }"
+            :while-in-view="{ y: 0, opacity: 1 }"
+            :transition="{ duration: 0.8, type: 'easeIn' }"
+            :in-view-options="{ once: true }"
           >
             <TextType
               class-name="text-secondary"
@@ -86,40 +100,43 @@
               :pause-duration="2000"
               :text="thoughtList"
             />
-          </div>
-          <UBlogPost
-            v-for="post in data"
-            :key="post.path"
-            class="border border-accent rounded-4xl shadow-2xl mt-4 shadow-accent animate__animated animate__fadeInRight"
-            :title="post.title"
-            :description="post.description"
-            :image="post.image"
-            :date="post.date"
-            :to="post.path"
-            orientation="horizontal"
-            variant="soft"
-          />
-          <div
-            class="hidden lg:flex mt-4 justify-end animate__animated animate__fadeInUp"
-          >
-            <UButton
-              trailing-icon="i-lucide-move-right"
-              color="secondary"
-              to="/blogs"
-              variant="link"
-              :ui="{
-                leadingIcon: 'text-primary',
-              }"
-            >
-              查看更多
-            </UButton>
-          </div>
+          </motion.div>
+          <motion.div
+            v-for="post in blogs"
+            :key="post.path" 
+            :initial="{opacity: 0, transform: 'translate(0, -50%) scale(1, 0)' }" 
+            :while-in-view="{ opacity: 1, transform: 'translate(0, 0) scale(1)' }"
+            :transition="{ type: 'spring' , visualDuration: 0.3 }">
+            <UBlogPost
+              class="border border-accent rounded-4xl shadow-2xl mt-4 shadow-accent"
+              :title="post.title"
+              :description="post.description"
+              :image="post.image"
+              :date="post.date"
+              :to="post.path"
+              orientation="horizontal"
+              variant="soft"
+            />
+          </motion.div>
         </div>
       </div>
     </Magnet>
   </div>
 </template>
 <script setup lang="ts">
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+import { motion } from "motion-v";
+
+const { data: blogs } = await useAsyncData('blogs-all', () => {
+  return queryCollection("blogs")
+    .select("title", "description", "image", "date", "path")
+    .order("date", "DESC")
+    .all();
+});
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const smallerThanLg = breakpoints.smaller('lg')
+
 const colorMode = useColorMode();
 const isDark = computed(() => colorMode.value === "dark");
 
@@ -133,11 +150,4 @@ const thoughtList = ref([
   "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍",
 ]);
 
-const { data } = await useAsyncData("blogs", () => {
-  return queryCollection("blogs")
-    .select("title", "description", "image", "date", "path")
-    .order("date", "DESC")
-    .limit(2)
-    .all();
-});
 </script>

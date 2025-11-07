@@ -14,7 +14,6 @@
     "@nuxt/eslint": "1.10.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "^4.1.0",
-    "animate.css": "^4.1.1",
     "eslint": "^9.38.0",
     "gsap": "^3.13.0",
     "motion-v": "^1.5.0",
@@ -27,11 +26,17 @@
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.72",
     "@types/three": "^0.180.0",
-    "sharp": "^0.34.4"
+    "@vueuse/core": "^14.0.0",
+    "@vueuse/nuxt": "^14.0.0"
   },
   "pnpm": {
-    "overrides": {
-      "ipx": "^3.0.0"
-    }
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "sharp",
+      "unrs-resolver",
+      "vue-demi"
+    ]
   }
 }
