@@ -3,11 +3,11 @@
     <Magnet :padding="30" :magnet-strength="25" :disabled="smallerThanLg">
       <div class="lg:flex">
         <div class="w-80 lg:w-3xs">
-          <motion.div 
+          <motion.div
             class="h-60 lg:h-94 lg:sticky lg:top-37"
             :initial="{ x: '-100%', opacity: 0 }"
             :while-in-view="{ x: 0, opacity: 1 }"
-            :transition="{ duration: 0.8,type: 'easeIn' }"
+            :transition="{ duration: 0.8 }"
             :in-view-options="{ once: true }"
           >
             <div
@@ -69,7 +69,7 @@
             class="flex items-center justify-center lg:sticky lg:top-137 border border-accent rounded-4xl p-4 shadow-2xl shadow-accent mt-4 font-bold text-sm"
             :initial="{ y: '100%', opacity: 0 }"
             :while-in-view="{ y: 0, opacity: 1 }"
-            :transition="{ duration: 0.8,type: 'easeIn' }"
+            :transition="{ duration: 0.8 }"
             :in-view-options="{ once: true }"
           >
             <span>实事求是</span>
@@ -90,7 +90,7 @@
             class="border border-accent rounded-4xl shadow-2xl shadow-accent p-4"
             :initial="{ y: '-100%', opacity: 0 }"
             :while-in-view="{ y: 0, opacity: 1 }"
-            :transition="{ duration: 0.8, type: 'easeIn' }"
+            :transition="{ duration: 0.8 }"
             :in-view-options="{ once: true }"
           >
             <TextType
@@ -103,10 +103,18 @@
           </motion.div>
           <motion.div
             v-for="post in blogs"
-            :key="post.path" 
-            :initial="{opacity: 0, transform: 'translate(0, -50%) scale(1, 0)' }" 
-            :while-in-view="{ opacity: 1, transform: 'translate(0, 0) scale(1)' }"
-            :transition="{ type: 'spring' , visualDuration: 0.3 }">
+            :key="post.path"
+            :initial="{
+              opacity: 0,
+              transform: 'translate(0, -50%) scale(1, 0)',
+            }"
+            :while-in-view="{
+              opacity: 1,
+              transform: 'translate(0, 0) scale(1)',
+            }"
+            :transition="{ type: 'spring', visualDuration: 0.3 }"
+            :in-view-options="{ once: true }"
+          >
             <UBlogPost
               class="border border-accent rounded-4xl shadow-2xl mt-4 shadow-accent"
               :title="post.title"
@@ -124,18 +132,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { motion } from "motion-v";
 
-const { data: blogs } = await useAsyncData('blogs-all', () => {
+const { data: blogs } = await useAsyncData("blogs-index", () => {
   return queryCollection("blogs")
     .select("title", "description", "image", "date", "path")
     .order("date", "DESC")
     .all();
 });
 
-const breakpoints = useBreakpoints(breakpointsTailwind)
-const smallerThanLg = breakpoints.smaller('lg')
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const smallerThanLg = breakpoints.smaller("lg");
 
 const colorMode = useColorMode();
 const isDark = computed(() => colorMode.value === "dark");
@@ -149,5 +157,4 @@ const thoughtList = ref([
   "讲骚话，有助于提升感情，哈哈😂😂",
   "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍",
 ]);
-
 </script>

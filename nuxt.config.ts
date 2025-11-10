@@ -10,7 +10,6 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "上车函予的个人网站" }],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
-    pageTransition: { name: 'page', mode: 'out-in' },
   },
   ui: {
     fonts: false,
