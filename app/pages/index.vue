@@ -23,7 +23,7 @@
               <img
                 class="lg:w-24 lg:h-24 w-16 h-16 rounded-full"
                 src="~/assets/images/avatar.svg"
-              >
+              />
               <div class="text-lg font-bold mt-2">上车函予</div>
               <div class="flex items-center mt-2">
                 <UIcon name="i-lucide-mail" />
@@ -45,7 +45,7 @@
                   variant="solid"
                   >全栈</UBadge
                 >
-                <br >
+                <br />
                 <UBadge
                   class="mt-2"
                   icon="i-lucide-disc-3"
@@ -149,7 +149,7 @@ const colorMode = useColorMode();
 const isDark = computed(() => colorMode.value === "dark");
 
 const textColors = computed(() =>
-  isDark.value ? ["hsl(191, 50%, 90%)"] : ["hsl(191, 50%, 10%)"]
+  isDark.value ? ["hsl(191, 50%, 90%)"] : ["hsl(191, 50%, 10%)"],
 );
 
 const thoughtList = ref([

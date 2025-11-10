@@ -7,7 +7,8 @@
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/content": "3.7.1",
@@ -24,10 +25,16 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@iconify-json/lucide": "^1.2.72",
     "@types/three": "^0.180.0",
     "@vueuse/core": "^14.0.0",
-    "@vueuse/nuxt": "^14.0.0"
+    "@vueuse/nuxt": "^14.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "3.6.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -37,6 +44,14 @@
       "sharp",
       "unrs-resolver",
       "vue-demi"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{html,vue,ts,cjs,json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{vue,js,ts,jsx,tsx}": [
+      "eslint --fix"
     ]
   }
 }

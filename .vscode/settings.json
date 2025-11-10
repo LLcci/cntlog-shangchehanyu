@@ -1,5 +1,14 @@
 {
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // 保存的时候自动格式化
   "editor.formatOnSave": true,
   "files.associations": {
@@ -13,7 +22,7 @@
     ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
   "eslint.format.enable": true,
-  "notebook.defaultFormatter": "dbaeumer.vscode-eslint",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
   //开启自动修复
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
