@@ -39,19 +39,19 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
 
+const { data: blogs } = await useAsyncData("blogs-all", () => {
+  return queryCollection("blogs")
+    .select("title", "description", "image", "date", "path")
+    .order("date", "DESC")
+    .all();
+});
+
 useSeoMeta({
   title: "上车函予技术博客 - 前端开发、后端架构与云原生技术分享",
   description:
     "上车函予的技术博客，分享前端开发、后端架构、云原生技术、Node.js、Vue3、NestJS等现代Web开发实践经验与深度思考。",
   keywords:
     "前端开发,后端架构,云原生技术,Node.js,Vue3,NestJS,Web开发,技术博客,编程实践,开发经验",
-});
-
-const { data: blogs } = await useAsyncData("blogs-all", () => {
-  return queryCollection("blogs")
-    .select("title", "description", "image", "date", "path")
-    .order("date", "DESC")
-    .all();
 });
 </script>
 <style scoped></style>

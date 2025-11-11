@@ -1,5 +1,7 @@
 <template>
-  <div class="lg:flex hidden w-full justify-center items-center sticky top-0 z-50">
+  <div
+    class="lg:flex hidden w-full justify-center items-center sticky top-0 z-50"
+  >
     <div
       class="w-150 border border-accent flex justify-center items-center rounded-full shadow-xl/30 shadow-accent mt-8 bg-gray-50 dark:bg-gray-800 opacity-80"
     >
@@ -19,7 +21,7 @@
         class="ml-8 w-10 h-10 rounded-full"
         src="~/assets/images/avatar.svg"
         alt=""
-      >
+      />
     </template>
     <template #right>
       <UButton
@@ -44,8 +46,8 @@
       <UNavigationMenu
         :items="lgItems"
         :ui="{
-          link:['text-3xl','py-4','gap-3'],
-          linkLeadingIcon:['size-6']
+          link: ['text-3xl', 'py-4', 'gap-3'],
+          linkLeadingIcon: ['size-6'],
         }"
         color="secondary"
         orientation="vertical"
@@ -58,7 +60,7 @@ const colorMode = useColorMode();
 const isDark = computed(() => colorMode.value === "dark");
 
 const nextTheme = computed(() =>
-  colorMode.value === "dark" ? "light" : "dark"
+  colorMode.value === "dark" ? "light" : "dark",
 );
 
 const switchTheme = () => {
@@ -80,7 +82,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -103,7 +105,7 @@ const startViewTransition = (event: MouseEvent) => {
         pseudoElement: isDark
           ? "::view-transition-new(root)"
           : "::view-transition-old(root)",
-      }
+      },
     );
   });
 };
