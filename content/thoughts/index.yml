@@ -1,0 +1,25 @@
+list:
+  - title: "天国：拯救2 中世纪模拟器，对胃口的会非常好玩，年度最佳大概率没戏"
+    date: 2025-11-11
+    icon: "i-lucide-gamepad-2"
+  - title: "讲骚话，有助于提升感情，哈哈😂😂"
+    date: 2025-11-02
+    icon: "i-lucide-dog"
+  - title: "燕云十六声确实好玩，可惜是罐头，玩不了多久就烦了"
+    date: 2025-10-25
+    icon: "i-lucide-annoyed"
+  - title: "对对对对对"
+    description: "此乃话术终极绝学，一句可立于不败之地"
+    date: 2025-10-23
+    icon: "i-lucide-check"
+  - title: "为什么大模型会产生幻觉"
+    description: "假设一个大模型被要求回答某人的生日，但它不知道。如果它猜测“9月10日”，那么它有1/365的概率猜对。回答“我不知道”，则猜对的概率为零。"
+    date: 2025-09-12
+    icon: "i-lucide-eye"
+  - title: "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍"
+    date: 2025-08-11
+    icon: "i-lucide-thumbs-up"
+  - title: "日复一日地为每个孤独的人提供一个倾听者和诉说者，只有 AI 能做到。"
+    description: "人们总幻想，自己的晚年身边充满了朋友、儿女、孙辈，以及一群热情洋溢的亲人。但是，真正的现实是，很多人的晚年是家人疏远或者不和，自身视力不佳、行动不便，甚至大小便失禁和痴呆。"
+    date: 2025-08-08
+    icon: "i-lucide-scan-heart"

@@ -94,11 +94,13 @@
             :in-view-options="{ once: true }"
           >
             <TextType
-              class-name="text-secondary"
+              v-if="thoughts"
+              class-name="text-secondary cursor-pointer"
               :text-colors="textColors"
               :typing-speed="100"
               :pause-duration="2000"
-              :text="thoughtList"
+              :text="thoughts.list.map((item) => item.title)"
+              @click="router.push('/thoughts')"
             />
           </motion.div>
           <motion.div
@@ -135,11 +137,17 @@
 import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 import { motion } from "motion-v";
 
+const router = useRouter();
+
 const { data: blogs } = await useAsyncData("blogs-index", () => {
   return queryCollection("blogs")
     .select("title", "description", "image", "date", "path")
     .order("date", "DESC")
     .all();
+});
+
+const { data: thoughts } = await useAsyncData("thoughts", () => {
+  return queryCollection("thoughts").first();
 });
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
@@ -151,10 +159,4 @@ const isDark = computed(() => colorMode.value === "dark");
 const textColors = computed(() =>
   isDark.value ? ["hsl(191, 50%, 90%)"] : ["hsl(191, 50%, 10%)"],
 );
-
-const thoughtList = ref([
-  "这里是我的个人网站",
-  "讲骚话，有助于提升感情，哈哈😂😂",
-  "一本讲Shaders非常好的书，《The Book of Shaders》，强烈推荐！👍👍",
-]);
 </script>
