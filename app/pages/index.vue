@@ -23,6 +23,7 @@
               <img
                 class="lg:w-24 lg:h-24 w-16 h-16 rounded-full"
                 src="~/assets/images/avatar.svg"
+                alt="avatar"
               />
               <div class="text-lg font-bold mt-2">上车函予</div>
               <div class="flex items-center mt-2">

@@ -17,8 +17,8 @@
         :initial="{ opacity: 0 }"
         :while-in-view="{
           opacity: 1,
-          transition: { duration: 0.8, delay: 0.2 },
         }"
+        :in-view-options="{ once: true }"
       >
         <UPageHero
           class="bg-white/30 dark:bg-black/30 backdrop-blur-lg rounded-4xl"
@@ -28,17 +28,22 @@
           orientation="horizontal"
           :reverse="index % 2 === 1"
         >
-          <motion.img
-            :id="`img-${index}`"
-            class="border border-accent rounded-xl shadow-2xl shadow-accent"
-            :src="project.image"
+          <motion.div
+            :class="index % 2 === 1 ? 'origin-top-left' : 'origin-top-right'"
             :initial="{
-              rotateX: index % 2 === 1 ? 50 : -50,
-              rotateZ: index % 2 === 1 ? 15 : -15,
+              rotate: index % 2 === 1 ? 15 : -15,
             }"
-            :while-in-view="{ rotateX: 0, rotateZ: 0 }"
+            :while-in-view="{
+              rotate: 0,
+            }"
             :transition="{ duration: 0.8, type: 'spring', delay: 0.2 }"
-          />
+          >
+            <NuxtImg
+              :src="project.image"
+              :alt="project.title"
+              class="border border-accent rounded-xl shadow-2xl shadow-accent"
+            />
+          </motion.div>
         </UPageHero>
       </motion.div>
     </UPage>
