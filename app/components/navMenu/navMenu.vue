@@ -40,7 +40,16 @@
         variant="link"
         @click="handleThemeToggle"
       />
-      <UNavigationMenu :items="items" color="secondary" />
+      <UButton
+        v-for="(item, index) in items"
+        :key="index"
+        :icon="item.icon"
+        :to="item.to"
+        :target="item.target"
+        size="md"
+        color="secondary"
+        variant="link"
+      ></UButton>
     </template>
     <template #body>
       <UNavigationMenu
