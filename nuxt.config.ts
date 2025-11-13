@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   css: ["~/assets/main.css"],
   app: {
     head: {
-      title: "上车函予技术博客 - 全栈架构师 | 前端动画与3D技术专家",
+      title: "上车函予技术博客 - 全栈架构师 | 前端动画与3D技术",
       meta: [
         {
           name: "description",
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
             "全栈开发,前端动画,3D技术,云原生架构,Node.js,Vue3,NestJS,Web开发,技术博客,上车函予",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [{ rel: "icon", type: "image/x-icon", href: "favicon.ico" }],
     },
     baseURL: "/cntlog-shangchehanyu/",
   },
