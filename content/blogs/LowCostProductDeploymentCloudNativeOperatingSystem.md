@@ -1,6 +1,6 @@
 ---
 title: 产品的低成本部署：云原生操作系统
-image: /system2.jpg
+image: system2.jpg
 date: 2025-04-10
 description: 探讨云原生操作系统如何实现产品低成本部署，分析财务成本和学习成本优势。
 keywords: 云原生操作系统,低成本部署,产品部署,容器化,Sealos,运维成本,DevOps,云原生技术,应用部署,资源管理
@@ -40,7 +40,7 @@ ok，那你也完全可以使用云原生操作系统，没有任何问题。
 
 ok，让我们开始吧。
 
-<img src="/system2.jpg" style="max-width: 800px; height: auto;" >
+<img src="system2.jpg" style="max-width: 800px; height: auto;" >
 
 ## 首先是财务成本
 

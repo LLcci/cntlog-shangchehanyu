@@ -1,6 +1,6 @@
 ---
 title: 告别从零开始！LangShift.dev：用对比学习让编程语言转换效率翻倍
-image: /LangShift.jpg
+image: LangShift.jpg
 date: 2025-09-11
 description: 介绍LangShift.dev如何利用对比学习技术提升编程语言转换效率。
 keywords: LangShift.dev,对比学习,编程语言转换,语言迁移,开源学习平台,编程教育,知识迁移,多语言学习,开发效率,学习平台

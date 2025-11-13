@@ -1,6 +1,6 @@
 ---
 title: 干掉图形验证码！基于PoW的Cap验证码集成指南
-image: /cap0.jpg
+image: cap0.jpg
 date: 2025-06-13
 description: 基于PoW的Cap验证码集成指南，替代传统图形验证码方案。
 keywords: Cap验证码,PoW验证码,工作量证明,验证码替代,图形验证码,Nestjs集成,Vue3集成,人机验证,前端安全,后端验证
@@ -100,7 +100,7 @@ onMounted(() => {
 
 表单校验及提交不在赘述
 
-<img src="/cap1.jpg" style="max-width: 800px;height: auto;" />
+<img src="cap1.jpg" style="max-width: 800px;height: auto;" />
 
 ## 服务端
 
@@ -149,7 +149,7 @@ export class LoginController {
 
   @Post("/redeem")
   async redeem(
-    @Body() body: { token: string; solutions: Array<[string, string, string]> }
+    @Body() body: { token: string; solutions: Array<[string, string, string]> },
   ) {
     const { token, solutions } = body;
     if (!token || !solutions) {
@@ -162,9 +162,9 @@ export class LoginController {
 
 当用户点击客户端 Cap 组件时，将请求`/challenge`和`/redeem`获取 token。
 
-<img src="/cap2.jpg" style="max-width: 800px;height: auto;" />
+<img src="cap2.jpg" style="max-width: 800px;height: auto;" />
 
-<img src="/cap3.jpg" style="max-width: 800px;height: auto;" />
+<img src="cap3.jpg" style="max-width: 800px;height: auto;" />
 
 最后在登录接口的 Service 内添加 token 验证：
 

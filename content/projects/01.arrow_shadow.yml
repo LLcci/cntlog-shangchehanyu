@@ -1,3 +1,3 @@
 title: 箭影日志
 description: 箭影日志 是一款专业的射箭训练和计分应用，基于 uni-app 的 unibest 框架开发，支持多端部署。🎯 专业计分系统 - 支持多种射箭比赛规则和计分方式，⏱️ 训练计时器 - 内置专业射箭训练计时功能，📊 数据统计 - 记录和分析射箭训练数据，📝 笔记功能 - 记录每次训练的心得和改进点。后端使用基于 nestjs 的 foolon admin 框架。
-image: /arrow_shadow_qrcode.jpg
+image: arrow_shadow_qrcode.jpg

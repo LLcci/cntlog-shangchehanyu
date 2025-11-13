@@ -1,6 +1,6 @@
 ---
 title: 2025最新vite+Cesium项目配置
-image: /Cesium0.jpg
+image: Cesium0.jpg
 date: 2025-05-15
 description: 解决Vite+Cesium项目配置问题，实现地球正常渲染的完整方案。
 keywords: Vite,Cesium,项目配置,地球渲染,静态文件配置,vite-plugin-static-copy,CESIUM_BASE_URL,三维地图,前端开发,构建配置
@@ -12,7 +12,7 @@ keywords: Vite,Cesium,项目配置,地球渲染,静态文件配置,vite-plugin-s
 
 > `VM138:1 Uncaught (in promise) SyntaxError: Unexpected token '<', "<!doctype "... is not valid JSON`
 
-<img src="/Cesium1.jpg" style="max-width: 800px; height: auto;" >
+<img src="Cesium1.jpg" style="max-width: 800px; height: auto;" >
 
 ## 官方 Blog 提供的方法
 
@@ -80,4 +80,4 @@ define: {
 
 ## 可以正常显示啦
 
-<img src="/Cesium2.jpg" style="max-width: 800px; height: auto;" >
+<img src="Cesium2.jpg" style="max-width: 800px; height: auto;" >

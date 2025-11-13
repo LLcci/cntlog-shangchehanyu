@@ -1,6 +1,6 @@
 ---
 title: 后端通向前端的第一站：flex
-image: /flex0.jpg
+image: flex0.jpg
 date: 2025-04-01
 description: 探讨flex布局作为后端开发者学习前端的最佳起点，通过美团APP实例展示简化布局实现。
 keywords: flex布局,后端转前端,前端开发,CSS布局,响应式设计,美团APP实例,布局技巧,前端学习,开发入门,设计工具对比
@@ -67,7 +67,7 @@ ok，首先我们可以先把这个页面分为 3 个部分：
 2. 功能宫格
 3. 个性推荐
 
-<img src="/flex1.jpg" style="max-width: 800px; height: auto;">
+<img src="flex1.jpg" style="max-width: 800px; height: auto;">
 
 tabbar 我们先忽略，因为实际开发时，一般会使用第三方组件来实现。
 
@@ -94,7 +94,7 @@ tabbar 我们先忽略，因为实际开发时，一般会使用第三方组件�
 </div>
 ```
 
-<img src="/flex2.jpg" style="max-width: 800px; height: auto;">
+<img src="flex2.jpg" style="max-width: 800px; height: auto;">
 
 > 我没有直接去写 css，使用的是 tailwindcss，可以使用类名去表示 css，方便更直观的理解布局。
 >

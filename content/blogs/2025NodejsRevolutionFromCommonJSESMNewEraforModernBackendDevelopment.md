@@ -1,6 +1,6 @@
 ---
 title: 2025 年 Node.js 革命：从 CommonJS 到 ESM，现代后端开发的新纪元
-image: /nodejs.jpg
+image: nodejs.jpg
 date: 2025-08-08
 description: 探讨2025年Node.js从CommonJS到ESM的演进及现代后端开发新特性。
 keywords: Node.js,ESM模块,CommonJS,现代后端开发,Web API集成,内置测试,工作线程,异步模式,流处理,安全监控
@@ -277,7 +277,7 @@ async function processFile(inputFile, outputFile) {
     await pipeline(
       createReadStream(inputFile),
       upperCaseTransform,
-      createWriteStream(outputFile)
+      createWriteStream(outputFile),
     );
     console.log("文件处理成功");
   } catch (error) {
@@ -342,7 +342,7 @@ async function calculateFibonacci(number) {
   return new Promise((resolve, reject) => {
     const worker = new Worker(
       fileURLToPath(new URL("./worker.js", import.meta.url)),
-      { workerData: { number } }
+      { workerData: { number } },
     );
 
     worker.on("message", resolve);

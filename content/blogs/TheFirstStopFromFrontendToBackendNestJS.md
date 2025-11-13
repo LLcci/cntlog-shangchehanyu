@@ -1,6 +1,6 @@
 ---
 title: 前端通向后端的第一站：Nestjs
-image: /nestjs.jpg
+image: nestjs.jpg
 date: 2025-03-27
 description: 探讨NestJS作为前端开发者学习后端的最佳选择，分析其与SpringBoot相似性、文档优势及开发工具。
 keywords: Nestjs,前端转后端,全栈开发,SpringBoot对比,TypeScript,后端框架,学习路径,开发工具,脚手架,文档体系

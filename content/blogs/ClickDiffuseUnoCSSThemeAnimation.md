@@ -1,6 +1,6 @@
 ---
 title: 点击即扩散：使用 View Transition API 实现 UnoCSS 官网同款主题切换动画
-image: /unocss1.gif
+image: unocss1.gif
 date: 2025-10-31
 description: 使用View Transition API实现UnoCSS官网同款主题切换动画效果。
 keywords: View Transition API,UnoCSS,主题切换,动画效果,前端动画,CSS动画,Vue3,Web API,点击扩散,伪元素动画
@@ -97,7 +97,7 @@ html {
 const colorMode = useColorMode();
 
 const nextTheme = computed(() =>
-  colorMode.value === "dark" ? "light" : "dark"
+  colorMode.value === "dark" ? "light" : "dark",
 );
 
 const switchTheme = () => {
@@ -129,7 +129,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 };
 ```
@@ -142,7 +142,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -159,7 +159,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -178,7 +178,7 @@ const startViewTransition = (event: MouseEvent) => {
         duration: 600,
         easing: "cubic-bezier(.76,.32,.29,.99)",
         pseudoElement: "::view-transition-new(root)",
-      }
+      },
     );
   });
 };
@@ -249,7 +249,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -272,7 +272,7 @@ const startViewTransition = (event: MouseEvent) => {
         pseudoElement: isDark
           ? "::view-transition-new(root)"
           : "::view-transition-old(root)",
-      }
+      },
     );
   });
 };
@@ -323,7 +323,7 @@ html {
 ```ts [app.vue]
 const colorMode = useColorMode();
 const nextTheme = computed(() =>
-  colorMode.value === "dark" ? "light" : "dark"
+  colorMode.value === "dark" ? "light" : "dark",
 );
 
 const switchTheme = () => {
@@ -345,7 +345,7 @@ const startViewTransition = (event: MouseEvent) => {
   const y = event.clientY;
   const endRadius = Math.hypot(
     Math.max(x, window.innerWidth - x),
-    Math.max(y, window.innerHeight - y)
+    Math.max(y, window.innerHeight - y),
   );
 
   const transition = document.startViewTransition(() => {
@@ -368,7 +368,7 @@ const startViewTransition = (event: MouseEvent) => {
         pseudoElement: isDark
           ? "::view-transition-new(root)"
           : "::view-transition-old(root)",
-      }
+      },
     );
   });
 };

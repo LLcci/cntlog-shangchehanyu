@@ -1,6 +1,6 @@
 ---
 title: 🏹从射箭开始的全栈开发之路🏹
-image: /arrow_shadow.jpg
+image: arrow_shadow.jpg
 date: 2025-03-06
 description: 使用Nestjs+Vue3技术栈开发"箭影日志"小程序的心路历程，包含功能的实现过程和技术选型思考。
 keywords: 射箭,全栈开发,Nestjs,Vue3,箭影日志,产品开发,技术选型,小程序开发,个人项目,开发心得
@@ -77,7 +77,7 @@ keywords: 射箭,全栈开发,Nestjs,Vue3,箭影日志,产品开发,技术选型
 
 ## 成品展示
 
-<img src="/arrow_shadow.jpg" alt="arrow_shadow" style="max-width: 800px; height: auto;" />
+<img src="arrow_shadow.jpg" alt="arrow_shadow" style="max-width: 800px; height: auto;" />
 
 ## 到最后啦
 
