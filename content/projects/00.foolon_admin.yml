@@ -4,17 +4,17 @@ image: foolon_admin.jpg
 links:
   - label: 文档
     color: secondary
-    variant: subtle
+    variant: outline
     icon: i-lucide-book
     to: https://llcci.github.io/foolon-admin-monorepo/
     target: _blank
   - icon: i-lucide-github
     to: https://github.com/llcci/foolon-admin-monorepo
     color: secondary
-    variant: subtle
+    variant: outline
     target: _blank
   - icon: i-custom-gitee
     to: https://gitee.com/shangchehanyu_admin/foolon-admin-monorepo
     color: secondary
-    variant: subtle
+    variant: outline
     target: _blank
