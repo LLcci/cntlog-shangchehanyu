@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@vueuse/nuxt",
   ],
-  css: ["~/assets/main.css", "gitalk/dist/gitalk.css"],
+  css: ["~/assets/main.css"],
   app: {
     head: {
       title: "上车函予技术博客 - 全栈架构师 | 前端动画与3D技术",

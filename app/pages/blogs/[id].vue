@@ -11,7 +11,6 @@
             :value="post"
           />
           <div v-else>post not found</div>
-          <div id="gitalk-container"></div>
           <UContentSurround :surround="surround" />
         </UPageBody>
         <template #right>
@@ -39,24 +38,9 @@
 </template>
 <script setup lang="ts">
 import { motion, useMotionValueEvent, useScroll, animate } from "motion-v";
-import Gitalk from "gitalk";
-
 const route = useRoute();
 const { data: post } = await useAsyncData(`blogs-${route.params.id}`, () => {
   return queryCollection("blogs").path(`/blogs/${route.params.id}`).first();
-});
-
-onMounted(() => {
-  const gitalk = new Gitalk({
-    clientID: "Ov23liYGLoI2pLuwlcyu",
-    clientSecret: "3b70c345839f0b4e51f46ee519063a75cb0dd515",
-    repo: "cntlog-shangchehanyu",
-    owner: "LLcci",
-    admin: ["LLcci"],
-    createIssueManually: true,
-    id: route.params.id as string,
-  });
-  gitalk.render("gitalk-container");
 });
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
