@@ -10,7 +10,7 @@ keywords: View Transition API,UnoCSS,主题切换,动画效果,前端动画,CSS�
 
 最近项目里经常使用 unocss，下意识点了下 unocss 官网的主题切换动画，有点意思，搞一下。
 
-<img src="unocss1.gif" alt="unocss 官网主题切换动画" />
+![unocss 官网主题切换动画](unocss1.gif)
 
 ## 让我们开始吧
 
@@ -197,7 +197,7 @@ const startViewTransition = (event: MouseEvent) => {
 
 再试一下，我们会得到这样一个效果。
 
-<img src="unocss2.gif" alt="theme-switch-animation-1" />
+![theme-switch-animation-1](unocss2.gif)
 
 已经很接近了，不是么？
 
@@ -280,7 +280,7 @@ const startViewTransition = (event: MouseEvent) => {
 
 大功告成！
 
-<img src="unocss3.gif" alt="theme-switch-animation-2" />
+![theme-switch-animation-2](unocss3.gif)
 
 ## 完整代码如下
 
