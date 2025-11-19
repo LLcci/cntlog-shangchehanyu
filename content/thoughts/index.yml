@@ -1,4 +1,7 @@
 list:
+  - title: 上层管理往往不真正理解 AI, 容易产生不切实际的幻想; 初级开发者有时会过度依赖 AI 而不理解代码本质
+    date: '2025-11-19'
+    icon: i-lucide-hammer
   - title: 给博客配置了nuxt studio, 可以在线编辑啦
     date: '2025-11-18'
     icon: i-lucide-scan-face
