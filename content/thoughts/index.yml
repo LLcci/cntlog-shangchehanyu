@@ -1,4 +1,7 @@
 list:
+  - title: 打算写一个Threejs渲染geojson的高性能组件
+    date: '2025-11-21'
+    icon: i-lucide-clipboard-pen
   - title: 上层管理往往不真正理解 AI, 容易产生不切实际的幻想; 初级开发者有时会过度依赖 AI 而不理解代码本质
     date: '2025-11-19'
     icon: i-lucide-hammer
