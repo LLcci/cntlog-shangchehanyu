@@ -1,0 +1,9 @@
+title: geojson-3d-renderer
+description: fgeojson-3d-renderer 是一个功能强大的 3D GeoJSON 可视化库，兼容 Three.js、Vue.js + Three.js 和 TresJS 环境。提供 Vue 组件、钩子和工具函数，用于在 3D 空间中渲染 GeoJSON 数据，并支持自定义材质。
+image: geojson-3d-renderer.jpg
+links:
+  - icon: i-lucide-github
+    to: https://github.com/LLcci/geojson-3d-renderer
+    color: secondary
+    variant: outline
+    target: _blank
